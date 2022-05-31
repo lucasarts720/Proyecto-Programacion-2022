@@ -1,0 +1,2 @@
+C:\Users\lucas\Desktop\ñ\Juego\Prog-2doAño\Proyecto-Programacion-2022\Proyecto-22\obj\Debug\Unity.InternalAPIEditorBridge.001.csproj.AssemblyReference.cache
+C:\Users\lucas\Desktop\ñ\Juego\Prog-2doAño\Proyecto-Programacion-2022\Proyecto-22\obj\Debug\Unity.InternalAPIEditorBridge.001.csproj.CoreCompileInputs.cache
