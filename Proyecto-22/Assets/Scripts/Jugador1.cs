@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class Jugador1 : Personaje
 {
-    public bool OnTrigger = false;
+    public LvlMgr LM;
     public GameObject Trigger;
     public SpriteRenderer sr;
     public float magnitudSalto = 5;
     public int contadorSaltos = 2;
+    public int contadorDashes;
     public int dashVel = 2;
+    public bool OnTrigger = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        LM = FindObjectOfType<LvlMgr>();
         vida = vidaMaxima;
+        vidaBarra.maxValue = vidaMaxima;
+        vidaBarra.value = vida;
+        vidaNumero.text = vida.ToString();
     }
-
 
     void Update()
     {
@@ -63,16 +69,19 @@ public class Jugador1 : Personaje
     }
     void Movimiento()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift) && contadorDashes>0)
         {
             if (Input.GetKey(KeyCode.A))
             {
                 rb.velocity = new Vector2(-dashVel, magnitudSalto/4);
+                contadorDashes--;
             }
             if (Input.GetKey(KeyCode.D))
             {
                 rb.velocity = new Vector2(dashVel, magnitudSalto/4);
+                contadorDashes--;
             }
+
         }
 
         float inputX = Input.GetAxis("Horizontal");
@@ -94,10 +103,14 @@ public class Jugador1 : Personaje
     }
     void Morir()
     {
-
+        LM.LoseGame();
     }
-
-
+    public void RecibirDMG(int dmg1)
+    {
+        vida = vida - dmg1;
+        vidaBarra.value = vida;
+        if (vida > 0) vidaNumero.text = vida.ToString(); else vidaNumero.text = 0.ToString();
+    }
 }
 
 

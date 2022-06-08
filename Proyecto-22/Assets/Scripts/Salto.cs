@@ -5,11 +5,7 @@ using UnityEngine;
 public class Salto : MonoBehaviour
 {
     private static Jugador1 s_jugador;
-    [SerializeField] int contadorSaltos;
-    private void Update()
-    {
-        contadorSaltos = s_jugador.contadorSaltos;
-    }
+    public int maxSaltos, maxDashes;
     private void Start()
     {
         s_jugador = FindObjectOfType<Jugador1>();
@@ -18,7 +14,8 @@ public class Salto : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("piso") || collision.gameObject.CompareTag("enemigo"))
         {
-            s_jugador.contadorSaltos = 2;
+            s_jugador.contadorSaltos = maxSaltos;
+            s_jugador.contadorDashes = maxDashes;
         }
     }
 }

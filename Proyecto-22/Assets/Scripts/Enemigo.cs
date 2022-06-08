@@ -13,8 +13,8 @@ public class Enemigo : Personaje
     {
         if (collision.gameObject.CompareTag("jugador"))
         {   
-            Jugador s_jugador = collision.gameObject.GetComponent<Jugador>();
-            s_jugador.vida -= daño;
+            Jugador1 s_jugador = collision.gameObject.GetComponent<Jugador1>();
+            s_jugador.RecibirDMG(dmg);
         }
     }
 }

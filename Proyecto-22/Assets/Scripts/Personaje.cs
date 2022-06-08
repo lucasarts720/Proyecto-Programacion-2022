@@ -7,7 +7,7 @@ public abstract class Personaje : MonoBehaviour
 {
     #region Variables
     public float velocidad = 1;
-    public int vida, vidaMaxima, daño;
+    public int vida, vidaMaxima, dmg;
     public Rigidbody2D rb;
     #endregion
 
@@ -20,10 +20,5 @@ public abstract class Personaje : MonoBehaviour
         #region Set de Barras
         vidaBarra.maxValue = vidaMaxima;
         #endregion
-    }
-    void Update()
-    {
-        vidaBarra.value = vida;
-        vidaNumero.text = Mathf.Round(vida).ToString();
     }
 }
