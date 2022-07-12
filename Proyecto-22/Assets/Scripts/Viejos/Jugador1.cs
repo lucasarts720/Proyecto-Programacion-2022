@@ -6,21 +6,25 @@ public class Jugador1 : Personaje
 {
     public LvlMgr LM;
     public GameObject Trigger;
+    public Salto s_piernas;
     public SpriteRenderer sr;
+    public Sprite yellow, blue, green;
     public float magnitudSalto = 5;
-    public int contadorSaltos = 2;
+    public int contadorSaltos;
     public int contadorDashes;
     public int dashVel = 2;
     public bool OnTrigger = false;
 
     protected override void Awake()
     {
+        s_piernas = gameObject.GetComponentInChildren<Salto>();
         sr = GetComponent<SpriteRenderer>();
         LM = FindObjectOfType<LvlMgr>();
         vida = vidaMaxima;
         vidaBarra.maxValue = vidaMaxima;
         vidaBarra.value = vida;
         vidaNumero.text = vida.ToString();
+        sr.sprite = yellow;
 
         base.Awake();
     }
@@ -41,6 +45,9 @@ public class Jugador1 : Personaje
         #endregion
         #region Mover
         Movimiento();
+        #endregion
+        #region Levelear
+        levelear();
         #endregion
         #region Interactuar
         if (Input.GetKeyDown(KeyCode.O) && OnTrigger)
@@ -97,6 +104,18 @@ public class Jugador1 : Personaje
         {
             sr.flipX = true;
         }
+    }
+
+    public void levelear()
+    {
+        if (s_piernas.maxSaltos == 2){
+            sr.sprite = blue;
+        }
+        else if (s_piernas.maxSaltos == 3)
+        {
+            sr.sprite = green;
+        }
+
     }
     void Interactuar()
     {

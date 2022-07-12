@@ -284,9 +284,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 614459694}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LvlMgr, Assembly-CSharp
-        m_MethodName: LoadLevel
+        m_MethodName: 
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -295,7 +295,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: ListadeNiveles
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
 --- !u!114 &248131541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,7 +309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 0, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.8597555, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -419,14 +419,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 614459694}
         m_TargetAssemblyTypeName: LvlMgr, Assembly-CSharp
-        m_MethodName: LoadLevel
+        m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Nivel0
+          m_StringArgument: SampleScene
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &259821760
@@ -574,6 +574,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4312089899647837953, guid: a2ee6cef407801f43b71e3380da177e1, type: 3}
+      propertyPath: UIon
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4312089899647837982, guid: a2ee6cef407801f43b71e3380da177e1, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1106,7 +1110,10 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Lista de
 
-    Niveles'
+    Niveles
+
+
+    (PROXIMAMENTE)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

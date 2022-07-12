@@ -9,6 +9,9 @@ public class PermaBoost : MonoBehaviour
         if (collision.gameObject.CompareTag("jugador"))
         {
             Salto s_piernas = collision.gameObject.GetComponentInChildren<Salto>();
+            Jugador1 j1 = collision.gameObject.GetComponent<Jugador1>();
+            j1.contadorSaltos = j1.contadorSaltos++;
+            j1.contadorDashes = j1.contadorDashes++;
             s_piernas.maxSaltos++;
             s_piernas.maxDashes++;
             Destroy(this.gameObject);
